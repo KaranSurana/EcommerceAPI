@@ -1,5 +1,13 @@
 const pro = require('../models/product')
+
+// defining and updating the ids of the products
+
 var num=1;
+
+// all the controllers for routes
+
+
+// index routes controller
 module.exports.index = function(req,res){
     pro.find({},function(err,products){
         if(err){
@@ -12,6 +20,8 @@ module.exports.index = function(req,res){
         })
     })  
 }
+
+// creating a product controller
 
 module.exports.create = function(req,res){
     pro.findOne({name:req.query.name},function(err,product){
@@ -48,6 +58,8 @@ module.exports.create = function(req,res){
         
     })
 }
+
+// deleting a product controller
 
 module.exports.delete = function(req,res){
     console.log(req.query.id);

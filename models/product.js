@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// creating an employee schema in mongodb
+// creating a product schema in mongodb
 const proSchema = new mongoose.Schema({
     _id: {
         type: String,
