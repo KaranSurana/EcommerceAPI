@@ -8,7 +8,7 @@ module.exports.index = function(req,res){
         }
         return res.json(200,{
             message:"Successful API Call",
-            products:products
+            products:{products}
         })
     })  
 }
@@ -50,5 +50,14 @@ module.exports.create = function(req,res){
 }
 
 module.exports.delete = function(req,res){
-    console.log(req.query.id)
+    console.log(req.query.id);
+    pro.findByIdAndDelete(req.query.id,function(err,prods){
+        if(err){
+            console.log(err);
+            return;
+        }
+        return res.json(200,{
+            message:"Product Deleted"
+        })
+    })
 }
