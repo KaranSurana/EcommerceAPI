@@ -14,7 +14,7 @@ const repository = require('./models/product');
 
 app.use(express.urlencoded());
 
-app.use('/',require('./routes/index'));
+app.use('/api',require('./routes/index'));
 
 // express listening to the port and returning
 app.listen(port,function(err){
